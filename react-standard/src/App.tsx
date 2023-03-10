@@ -23,7 +23,7 @@ function App() {
         <>
             <GlobalStyle />
             <AppContainer>
-                <Header title="최진안" description="test" />
+                <Header title="Header" description="test" />
                 <Sidebar />
                 <Contents />
                 <Footer />
