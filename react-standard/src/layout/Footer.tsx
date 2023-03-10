@@ -13,7 +13,7 @@ function Footer() {
     // view
     return (
         <FooterContainer>
-            <h1>Footer</h1>;
+            <h2>Footer</h2>
         </FooterContainer>
     );
 }

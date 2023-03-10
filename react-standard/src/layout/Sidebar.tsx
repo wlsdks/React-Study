@@ -16,7 +16,7 @@ function Sidebar() {
     // view
     return (
         <SidebarContainer>
-            <h1>Sidebar</h1>;
+            <h2>Sidebar</h2>
         </SidebarContainer>
     );
 }

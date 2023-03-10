@@ -18,8 +18,8 @@ function Header({ title, description }: Props) {
     // view -> 아래 {}안에 js의 변수나 함수를 넣을수가 있다.
     return (
         <HeaderContainer>
-            <h1>{title}</h1>
-            <h1>{description}</h1>
+            <h2>{title}</h2>
+            <h2>{description}</h2>
         </HeaderContainer>
     );
 }
