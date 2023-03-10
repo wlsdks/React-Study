@@ -6,12 +6,12 @@ type Props = {
 /**
  * @description 헤더 컴포넌트
  */
-function Header(props: Props) {
+function Header({ title, description }: Props) {
     // view -> 아래 {}안에 js의 변수나 함수를 넣을수가 있다.
     return (
         <>
-            <h1>{props.title}</h1>
-            <h1>{props.description}</h1>
+            <h1>{title}</h1>
+            <h1>{description}</h1>
         </>
     );
 }
