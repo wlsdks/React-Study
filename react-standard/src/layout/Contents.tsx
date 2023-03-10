@@ -12,7 +12,7 @@ function Contents() {
     // view
     return (
         <ContentsContainer>
-            <h1>Contents</h1>
+            <h2>Contents</h2>
         </ContentsContainer>
     );
 }
