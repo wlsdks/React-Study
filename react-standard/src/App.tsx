@@ -12,7 +12,7 @@ function App() {
     // view
     return (
         <>
-            <Header />
+            <Header title="최진안" description="test" />
             <Sidebar />
             <Contents />
             <Footer />
