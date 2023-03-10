@@ -1,7 +1,15 @@
+import styled from "styled-components";
+
 type Props = {
     title: string;
     description?: string;
 };
+
+const HeaderContainer = styled.header`
+    width: 100%;
+    height: 120px;
+    background-color: lightgreen;
+`;
 
 /**
  * @description 헤더 컴포넌트
@@ -9,10 +17,10 @@ type Props = {
 function Header({ title, description }: Props) {
     // view -> 아래 {}안에 js의 변수나 함수를 넣을수가 있다.
     return (
-        <>
+        <HeaderContainer>
             <h1>{title}</h1>
             <h1>{description}</h1>
-        </>
+        </HeaderContainer>
     );
 }
 
