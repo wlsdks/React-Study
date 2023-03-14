@@ -22,8 +22,7 @@ function Input() {
 
     //event
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value;
-        setInputValue(value);
+        setInputValue(e.target.value);
     };
 
     //view

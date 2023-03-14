@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useState } from "react";
-import Input from "./Input";
 
 const Wrap = styled.div`
     padding: 10px;
