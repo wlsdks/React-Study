@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     @font-face{font-family:"Mont Bold";font-style:normal;src:url("./font/Montserrat-Bold.woff2") format("woff2"),url("./font/Montserrat-Bold.woff") format("woff")}  
     @font-face{font-family:"Mont ExtraBold";font-style:normal;src:url("./font/Montserrat-ExtraBold.woff2") format("woff2"),url("./font/Montserrat-ExtraBold.woff") format("woff")} 
     html, body {height:100%;font-family:"Mont Light";}  
-    #root{height:100%}    
+    #root{height:100%}
     h2{margin:10px;font-family:"Mont Bold";font-size:1.8rem}`;
 
 export default GlobalStyle;
