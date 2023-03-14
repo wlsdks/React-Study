@@ -24,11 +24,12 @@ function Counter() {
 
     // event 함수 생성
     const onIncrease = () => {
-        setCount(count + 1);
+        // 값을 변경할때는 read-only값을 사용해서는 안되고 아래코드처럼 이전의 값을 함수형태로 (prevState)안에 받아와서 써야한다.
+        setCount((prevState) => prevState + 1);
     };
 
     const onDecrease = () => {
-        setCount(count - 1);
+        setCount((prevState) => prevState - 1);
     };
 
     // view
