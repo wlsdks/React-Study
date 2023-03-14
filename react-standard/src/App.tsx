@@ -23,7 +23,7 @@ function App() {
         <>
             <GlobalStyle />
             <AppContainer>
-                <Header title="Header" description="test" />
+                <Header title="Header" description="" />
                 <Sidebar />
                 <Contents />
                 <Footer />

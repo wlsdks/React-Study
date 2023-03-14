@@ -28,9 +28,9 @@ function Input() {
     //watch
     useEffect(() => {
         // init -> 화면 진입에 onload형태로 사용이 가능하다.
-
-        console.log(new Date());
-    }, []);
+        // inputValue를 2번째 인자에 []로 담아주면 바뀔때마다 함수 body의 내용이 동작한다.
+        console.log(inputValue);
+    }, [inputValue]);
 
     //view
     return (
