@@ -6,6 +6,11 @@ const Wrap = styled.div`
     h1 {
         font-size: 2em;
     }
+    button {
+        margin-right: 3px;
+        width: 30px;
+        height: 30px;
+    }
 `;
 
 /**
@@ -22,7 +27,8 @@ function Counter() {
         <Wrap>
             <hr />
             <h1>Counter : {count}</h1>
-
+            <button>+</button>
+            <button>-</button>
             <hr />
         </Wrap>
     );
