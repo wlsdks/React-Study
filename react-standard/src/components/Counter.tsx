@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import Input from "./Input";
 
 const Wrap = styled.div`
     padding: 10px;
@@ -34,13 +35,16 @@ function Counter() {
 
     // view
     return (
-        <Wrap>
-            <hr />
-            <h1>Counter : {count}</h1>
-            <button onClick={onIncrease}>+</button>
-            <button onClick={onDecrease}>-</button>
-            <hr />
-        </Wrap>
+        <>
+            <Wrap>
+                <hr />
+                <h1>Counter : {count}</h1>
+                <button onClick={onIncrease}>+</button>
+                <button onClick={onDecrease}>-</button>
+                <hr />
+            </Wrap>
+            <Input />
+        </>
     );
 }
 
