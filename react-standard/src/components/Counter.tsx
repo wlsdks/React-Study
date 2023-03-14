@@ -22,12 +22,17 @@ function Counter() {
     //  [read-only , update]
     const [count, setCount] = useState<number>(0);
 
+    // event 함수 생성
+    const onClick = () => {
+        setCount(count + 1);
+    };
+
     // view
     return (
         <Wrap>
             <hr />
             <h1>Counter : {count}</h1>
-            <button>+</button>
+            <button onClick={onClick}>+</button>
             <button>-</button>
             <hr />
         </Wrap>
