@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -24,6 +24,13 @@ function Input() {
     const onChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
     };
+
+    //watch
+    useEffect(() => {
+        // init -> 화면 진입에 onload형태로 사용이 가능하다.
+
+        console.log(new Date());
+    }, []);
 
     //view
     return (
