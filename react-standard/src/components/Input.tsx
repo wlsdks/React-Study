@@ -7,7 +7,7 @@ const Wrap = styled.div`
         font-size: 2em;
     }
     input {
-        margin: 10px;
+        margin-top: 10px;
         padding: 10px;
     }
 `;
@@ -23,8 +23,8 @@ function Input() {
     //view
     return (
         <Wrap>
-            <h1>Input</h1>
-            <input />
+            <h1>Input : {inputValue}</h1>
+            <input value={inputValue} />
         </Wrap>
     );
 }

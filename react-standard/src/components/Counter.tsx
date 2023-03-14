@@ -35,16 +35,13 @@ function Counter() {
 
     // view
     return (
-        <>
-            <Wrap>
-                <hr />
-                <h1>Counter : {count}</h1>
-                <button onClick={onIncrease}>+</button>
-                <button onClick={onDecrease}>-</button>
-                <hr />
-            </Wrap>
-            <Input />
-        </>
+        <Wrap>
+            <hr />
+            <h1>Counter : {count}</h1>
+            <button onClick={onIncrease}>+</button>
+            <button onClick={onDecrease}>-</button>
+            <hr />
+        </Wrap>
     );
 }
 
