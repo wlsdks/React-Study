@@ -23,8 +23,12 @@ function Counter() {
     const [count, setCount] = useState<number>(0);
 
     // event 함수 생성
-    const onClick = () => {
+    const onIncrease = () => {
         setCount(count + 1);
+    };
+
+    const onDecrease = () => {
+        setCount(count - 1);
     };
 
     // view
@@ -32,8 +36,8 @@ function Counter() {
         <Wrap>
             <hr />
             <h1>Counter : {count}</h1>
-            <button onClick={onClick}>+</button>
-            <button>-</button>
+            <button onClick={onIncrease}>+</button>
+            <button onClick={onDecrease}>-</button>
             <hr />
         </Wrap>
     );
