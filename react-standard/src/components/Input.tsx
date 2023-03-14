@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -20,11 +20,17 @@ function Input() {
     //state
     const [inputValue, setInputValue] = useState<string>("");
 
+    //event
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value;
+        setInputValue(value);
+    };
+
     //view
     return (
         <Wrap>
             <h1>Input : {inputValue}</h1>
-            <input value={inputValue} />
+            <input value={inputValue} onChange={onChange} />
         </Wrap>
     );
 }
