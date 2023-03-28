@@ -16,7 +16,7 @@ function Contents() {
     // view
     return (
         <ContentsContainer>
-            <Calculator />
+            {/* <Calculator /> */}
             <h2>Contents</h2>
             <Counter />
             <hr />

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -54,17 +55,31 @@ type Props = {
  *@description 팝업 컴포넌트
  */
 function Popup({ content, btnTitle }: Props) {
+    // state
+    const [isOpen, setIsOpen] = useState<boolean>(true);
+
+    // event
+    const onClose = () => {
+        setIsOpen(false);
+    };
+
     // view
     return (
-        <Wrap>
-            <button>팝업 열기</button>{" "}
-            <PopupContainer>
-                <PopupContent>
-                    <p>{content}</p>
-                    <CloseButton>{btnTitle}</CloseButton>
-                </PopupContent>
-            </PopupContainer>
-        </Wrap>
+        <>
+            {isOpen && (
+                <Wrap>
+                    <button>팝업 열기</button>{" "}
+                    <PopupContainer>
+                        <PopupContent>
+                            <p>{content}</p>
+                            <CloseButton onClick={onClose}>
+                                {btnTitle}
+                            </CloseButton>
+                        </PopupContent>
+                    </PopupContainer>
+                </Wrap>
+            )}
+        </>
     );
 }
 
