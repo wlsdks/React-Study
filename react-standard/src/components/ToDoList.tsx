@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const InputArea = styled.div`
@@ -92,6 +93,9 @@ const Input = styled.input`
  * @description 할 일 목록
  */
 function TodoList() {
+    // state
+    const [List, setList] = useState<string[]>(["a", "b", "c", "d", "e"]);
+
     // view
     return (
         <Wrapper>
@@ -103,15 +107,17 @@ function TodoList() {
                 </InputArea>
             </form>
             <TodoItems>
-                <TodoItem>
-                    <Flex>
-                        <Checkbox />
-                        <Task completed={false}>TEST</Task>
-                    </Flex>
-                    <div>
-                        <DeleteButton>Delete</DeleteButton>
-                    </div>
-                </TodoItem>
+                {List.map(() => (
+                    <TodoItem>
+                        <Flex>
+                            <Checkbox />
+                            <Task completed={false}>TEST</Task>
+                        </Flex>
+                        <div>
+                            <DeleteButton>Delete</DeleteButton>
+                        </div>
+                    </TodoItem>
+                ))}
             </TodoItems>
         </Wrapper>
     );
