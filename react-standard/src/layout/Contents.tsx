@@ -4,6 +4,7 @@ import Input from "@/components/Input";
 // import Calculator from "@/components/Calculator";
 import Popup from "@/components/Popup";
 import LiveClock from "@/components/LiveClock";
+import TodoList from "@/components/ToDoList";
 
 const ContentsContainer = styled.main`
     height: 100%;
@@ -17,7 +18,7 @@ function Contents() {
     // view
     return (
         <ContentsContainer>
-            {/* <Calculator /> */}
+            {/* <Calculator />
             <h2>Contents</h2>
             <Counter />
             <hr />
@@ -26,6 +27,8 @@ function Contents() {
             <Popup content="리액트 스터디 (5회차)" btnTitle="확인" />
             <hr />
             <LiveClock />
+            <hr /> */}
+            <TodoList />
         </ContentsContainer>
     );
 }
