@@ -59,6 +59,10 @@ function Popup({ content, btnTitle }: Props) {
     const [isOpen, setIsOpen] = useState<boolean>(true);
 
     // event
+    const onPopupOpen = () => {
+        setIsOpen(true);
+    };
+
     const onClose = () => {
         setIsOpen(false);
     };
@@ -66,9 +70,9 @@ function Popup({ content, btnTitle }: Props) {
     // view
     return (
         <>
+            <button onClick={onPopupOpen}>팝업 열기</button>
             {isOpen && (
                 <Wrap>
-                    <button>팝업 열기</button>{" "}
                     <PopupContainer>
                         <PopupContent>
                             <p>{content}</p>
