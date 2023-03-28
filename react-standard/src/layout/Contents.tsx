@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import Counter from "@/components/Counter";
 import Input from "@/components/Input";
-import Calculator from "@/components/Calculator";
+// import Calculator from "@/components/Calculator";
 import Popup from "@/components/Popup";
+import LiveClock from "@/components/LiveClock";
 
 const ContentsContainer = styled.main`
     height: 100%;
@@ -23,6 +24,8 @@ function Contents() {
             <Input />
             <hr />
             <Popup content="리액트 스터디 (5회차)" btnTitle="확인" />
+            <hr />
+            <LiveClock />
         </ContentsContainer>
     );
 }
