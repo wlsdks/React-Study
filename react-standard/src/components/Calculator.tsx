@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState, useEffect, ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 const MainContainer = styled.div`
     display: flex;
@@ -64,49 +64,61 @@ const InputBar = styled.input`
  */
 function Calculator() {
     // state
-    const [inputValue, setInputValue] = useState<string>("");
+    const [inputValue, setInputValue] = useState<string>("0");
 
     // event
     const onAddNumber = (number: number) => {
-        setInputValue((prevState) => prevState + number.toString());
+        setInputValue((prevState) => prevState + number.toString()); // String(number)도 가능
+    };
+
+    const onAddDot = () => {
+        setInputValue((prevState) => prevState + ".");
+    };
+
+    const onAddPerc = () => {
+        setInputValue((prevState) => prevState + "%");
+    };
+
+    const onAC = () => {
+        setInputValue("0");
     };
 
     const onDelete = () => {
         setInputValue((prevState) => prevState.slice(0, -1));
     };
 
-    const onAllClear = () => {
-        setInputValue("0");
+    const onAddOper = (operator: string) => {
+        setInputValue((prev) => prev + operator);
     };
 
-    const onAddOperator = (operator: string) => {
-        setInputValue((prevState) => prevState + operator);
+    const calTotal = () => {
+        setInputValue((prev) => Number(prev).toString());
     };
 
     // view
     return (
         <MainContainer>
-            <InputBar readOnly value={inputValue} />
+            <InputBar value={inputValue} readOnly />
             <ButtonContainer>
-                <Button onClick={onAllClear}>AC</Button>
+                <Button onClick={onAC}>AC</Button>
                 <Button onClick={onDelete}>DEL</Button>
-                <CalButton onClick={() => onAddOperator("%")}>%</CalButton>
-                <CalButton onClick={c}>÷</CalButton>
+                <CalButton onClick={() => onAddOper("%")}>%</CalButton>
+                <CalButton onClick={() => onAddOper("/")}>÷</CalButton>
                 <Button onClick={() => onAddNumber(7)}>7</Button>
                 <Button onClick={() => onAddNumber(8)}>8</Button>
                 <Button onClick={() => onAddNumber(9)}>9</Button>
-                <CalButton onClick={() => onAddOperator("x")}>×</CalButton>
+                <CalButton onClick={() => onAddOper("*")}>×</CalButton>
                 <Button onClick={() => onAddNumber(4)}>4</Button>
                 <Button onClick={() => onAddNumber(5)}>5</Button>
                 <Button onClick={() => onAddNumber(6)}>6</Button>
-                <CalButton onClick={onMinus}>-</CalButton>
+                <CalButton onClick={() => onAddOper("-")}>-</CalButton>
                 <Button onClick={() => onAddNumber(1)}>1</Button>
                 <Button onClick={() => onAddNumber(2)}>2</Button>
                 <Button onClick={() => onAddNumber(3)}>3</Button>
-                <CalButton onClick={onPlus}>+</CalButton>
+                <CalButton onClick={() => onAddOper("+")}>+</CalButton>
                 <ZeroButton onClick={() => onAddNumber(0)}>0</ZeroButton>
-                <Button>.</Button>
-                <CalButton>=</CalButton>
+                <Button onClick={onAddDot}>.</Button>
+                <CalButton onClick={calTotal}>=</CalButton>
             </ButtonContainer>
         </MainContainer>
     );
