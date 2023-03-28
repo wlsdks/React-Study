@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import styled from "styled-components";
 
 const InputArea = styled.div`
@@ -94,24 +94,45 @@ const Input = styled.input`
  */
 function TodoList() {
     // state
-    const [List, setList] = useState<string[]>(["a", "b", "c", "d", "e"]);
+    const [list, setList] = useState<string[]>(["a", "b", "c", "d", "e"]);
+    const [inputValue, setInputValue] = useState<string>("");
+
+    // event
+    const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.target.value);
+    };
+
+    const onAddTask = () => {
+        if (!inputValue) {
+            alert("할 일을 입력하세요.");
+            return;
+        }
+
+        setList((prevList) => prevList.concat(inputValue));
+        setInputValue("");
+    };
 
     // view
     return (
         <Wrapper>
             <Title>Todo List</Title>
-            <form>
-                <InputArea>
-                    <Input type="text" placeholder="할 일을 입력해주세요." />
-                    <AddButton>Add</AddButton>
-                </InputArea>
-            </form>
+            {/* <form> */}
+            <InputArea>
+                <Input
+                    type="text"
+                    placeholder="할 일을 입력해주세요."
+                    value={inputValue}
+                    onChange={onChange}
+                />
+                <AddButton onClick={onAddTask}>Add</AddButton>
+            </InputArea>
+            {/* </form> */}
             <TodoItems>
-                {List.map(() => (
+                {list.map((item) => (
                     <TodoItem>
                         <Flex>
                             <Checkbox />
-                            <Task completed={false}>TEST</Task>
+                            <Task completed={false}>{item}</Task>
                         </Flex>
                         <div>
                             <DeleteButton>Delete</DeleteButton>
