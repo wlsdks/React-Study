@@ -25,10 +25,18 @@ function Sidebar() {
         <SidebarContainer>
             <h2>Sidebar</h2>
             <ul>
-                <li>Page01</li>
-                <li>Page02</li>
-                <li>Page03</li>
-                <li>Page04</li>
+                <li>
+                    <Link to="calculator">calculator</Link>
+                </li>
+                <li>
+                    <Link to="counter">counter</Link>
+                </li>
+                <li>
+                    <Link to="live-clock">live-clock</Link>
+                </li>
+                <li>
+                    <Link to="to-do-list">to-do-list</Link>
+                </li>
             </ul>
         </SidebarContainer>
     );
