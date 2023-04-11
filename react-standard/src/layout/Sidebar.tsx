@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const SidebarContainer = styled.div`
@@ -7,6 +8,12 @@ const SidebarContainer = styled.div`
     width: 240px;
     height: 100vh;
     background-color: #a4d1c7;
+
+    li {
+        font-size: 1.5em;
+        margin-top: 100px;
+        padding-left: 20px;
+    }
 `;
 
 /**
@@ -17,6 +24,12 @@ function Sidebar() {
     return (
         <SidebarContainer>
             <h2>Sidebar</h2>
+            <ul>
+                <li>Page01</li>
+                <li>Page02</li>
+                <li>Page03</li>
+                <li>Page04</li>
+            </ul>
         </SidebarContainer>
     );
 }
